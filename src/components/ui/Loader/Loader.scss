@@ -1,0 +1,116 @@
+.Loader {
+  margin-right: 8px;
+  --color: rgb(200, 200, 200);
+  --fade-color: rgb(200, 200, 200);
+  --scale: 1;
+  --x-speed: 1;
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 200px;
+  transform: scale(var(--scale)) rotateZ(0);
+  animation: ps-spin calc(15s / var(--x-speed)) linear infinite;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@keyframes ps-spin {
+  from {
+    transform: scale(var(--scale)) rotateZ(0);
+  }
+  to {
+    transform: scale(var(--scale)) rotateZ(-360deg);
+  }
+}
+
+.Loader span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.Loader span::before,
+.Loader span::after {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 50%;
+  transform: translateY(-50%) scale(.3);
+  background-color: rgb(228, 228, 228);
+  border-radius: 50%;
+   animation: ps-spinner-scale calc(1.2s / var(--x-speed)) linear infinite
+}
+
+.Loader.Loader-warning span::before,
+.Loader.Loader-warning span::after {
+  background-color: var(--orange-400);
+}
+
+@keyframes ps-spinner-scale {
+  0% {
+    background-color: var(--fade-color);
+    transform: translateY(-50%) scale(.3);
+  }
+  25% {
+    background-color: var(--color);
+    transform: translateY(-50%) scale(1);
+  }
+  80% {
+    background-color: var(--fade-color);
+    transform: translateY(-50%) scale(.3);
+  }
+  100% {
+    background-color: var(--fade-color);
+    transform: translateY(-50%) scale(.3);
+  }
+}
+
+.Loader span::before {
+  left: 0;
+}
+
+.Loader span::after {
+  right: 0;
+}
+
+.Loader span:first-of-type {
+  transform: rotateZ(-45deg);
+}
+
+.Loader span:last-of-type {
+  transform: rotateZ(45deg);
+}
+
+.Loader span:nth-of-type(2) {
+  transform: rotateZ(90deg);
+}
+
+.Loader span:nth-of-type(3)::after {
+  animation-delay: calc(0.15s / var(--x-speed));
+}
+.Loader span:last-of-type::after {
+  animation-delay: calc(.3s / var(--x-speed));
+}
+.Loader span:nth-of-type(2)::after {
+  animation-delay: calc(.45s / var(--x-speed));
+}
+.Loader span:first-of-type::before {
+  animation-delay: calc(.6s / var(--x-speed));
+}
+.Loader span:nth-of-type(3)::before {
+  animation-delay: calc(.75s / var(--x-speed));
+}
+.Loader span:last-of-type::before {
+  animation-delay: calc(.9s / var(--x-speed));
+}
+.Loader span:nth-of-type(2)::before {
+  animation-delay: calc(1.05s / var(--x-speed));
+}

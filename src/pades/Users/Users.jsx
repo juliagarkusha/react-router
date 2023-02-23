@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getList } from "../../store/actions/users";
-import userList from "../../components/common/users/UserList";
+import { getUsers } from "../../store/actions/users";
 import UserList from "../../components/common/users/UserList";
 
 function Users () {
@@ -9,10 +8,8 @@ function Users () {
   const users = useSelector(state => state.users.list);
 
   useEffect(() => {
-    dispatch(getList())
+    dispatch(getUsers());
   }, [dispatch])
-  
-  console.log('debug users: ', users);
 
   return(
     <section>

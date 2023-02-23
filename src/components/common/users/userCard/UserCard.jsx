@@ -12,14 +12,13 @@ function UserCard (props) {
 
   function onButtonClick () {
     navigate(`/users/${id}/albums`)
-    console.log('debug : ', id);
   }
 
   return (
     <article className="UserCard">
       <p className="UserCard-info">
         <span>Name:</span>
-        <span>{name}</span>
+        <strong>{name}</strong>
       </p>
       <p className="UserCard-phone">
         <span>Phone:</span>

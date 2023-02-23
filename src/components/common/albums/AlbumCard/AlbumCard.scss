@@ -1,6 +1,14 @@
 .AlbumCard {
-
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid;
+  margin-bottom: 12px;
   &-info {
 
   }
+}
+
+h4 {
+  margin-bottom: 8px;
+  margin-top: 0;
 }

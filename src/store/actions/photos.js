@@ -3,19 +3,19 @@ import Api from "../../api/Api";
 export const PHOTOS_SET_LIST_ACTION = 'setPhotos';
 export const PHOTOS_LOADING_ACTION = 'loading';
 
-export function getList () {
+export function getPhotos (albumId) {
   return (dispatch) => {
     dispatch(isLoading());
 
     Api
-      .getList('photos')
+      .getList(`photos?albumId=${albumId}`)
       .then(list => {
-        dispatch(setList(list))}
+        dispatch(setPhotos(list))}
       )
   }
 }
 
-export function setList (list) {
+export function setPhotos (list) {
   return { type: PHOTOS_SET_LIST_ACTION, payload: list }
 }
 

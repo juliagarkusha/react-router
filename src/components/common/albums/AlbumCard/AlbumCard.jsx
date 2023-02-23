@@ -1,6 +1,5 @@
-import { useNavigate, useSearchParams } from "react-router-dom";
-// Local deps
-import "./";
+import { useNavigate, useParams } from "react-router-dom";
+import "./AlbumCard.scss";
 
 function AlbumCard (props) {
   const {
@@ -8,13 +7,11 @@ function AlbumCard (props) {
   } = props;
 
   const { id, title } = album;
-
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-  console.log('debug searchParams: ', searchParams.get('id'));
+  const { userId } = useParams();
 
   function onButtonClick () {
-   // navigate(`/users/:id/albums/${id}`)
+   navigate(`/users/${userId}/albums/${id}`)
   }
 
   return (

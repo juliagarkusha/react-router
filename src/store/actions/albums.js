@@ -3,12 +3,12 @@ import Api from "../../api/Api";
 export const ALBUMS_SET_LIST_ACTION = 'setAlbums';
 export const ALBUMS_LOADING_ACTION = 'loading';
 
-export function getList () {
+export function getList (userId) {
   return (dispatch) => {
     dispatch(isLoading());
 
     Api
-      .getList('albums')
+      .getList(`albums?userId=${userId}`)
       .then(list => {
         dispatch(setList(list))}
       )

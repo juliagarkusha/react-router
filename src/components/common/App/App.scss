@@ -24,11 +24,19 @@
   --gap: 16px;
 }
 
-.app {
-  display: grid;
-  grid-template-columns: 200px 1fr;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 .content {
-  padding: 8px 16px;
+  padding: 32px;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  margin-top: 0;
 }
