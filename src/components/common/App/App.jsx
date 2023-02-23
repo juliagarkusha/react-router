@@ -2,6 +2,8 @@
 import React, { useEffect } from "react";
 
 // Internal deps
+import Router from "../../../Router";
+import Nav from "../Nav";
 
 // Local deps
 import './App.scss';
@@ -13,7 +15,10 @@ function App() {
 
   return (
     <main className="app">
-      app
+      <Nav />
+      <div className="content">
+        <Router />
+      </div>
     </main>
   );
 }

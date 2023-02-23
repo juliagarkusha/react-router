@@ -25,5 +25,10 @@
 }
 
 .app {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
 
+.content {
+  padding: 8px 16px;
 }

@@ -1,0 +1,14 @@
+.Nav {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  &-active {
+    color: orange;
+  }
+}
