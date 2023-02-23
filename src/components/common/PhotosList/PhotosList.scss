@@ -1,0 +1,14 @@
+.PhotosList {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    width: 200px;
+  }
+
+  img {
+    display: inline-flex;
+    width: 100%;
+    height: auto;
+  }
+}

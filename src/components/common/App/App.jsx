@@ -1,9 +1,5 @@
-// External deps
 import React, { useEffect } from "react";
-
-// Internal deps
-
-// Local deps
+import Router from "../../../Router";
 import './App.scss';
 
 function App() {
@@ -13,7 +9,9 @@ function App() {
 
   return (
     <main className="app">
-      app
+      <div className="content">
+        <Router />
+      </div>
     </main>
   );
 }
